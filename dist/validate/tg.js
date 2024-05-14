@@ -30,12 +30,17 @@ SendTgMessage.send_message = (tg_value, message) => __awaiter(void 0, void 0, vo
     const bot = new node_telegram_bot_api_1.default(tg_value.bot_token, {
         polling: true,
     });
-    bot
-        .sendMessage(tg_value.telegram_id, message, { parse_mode: 'HTML' })
-        .then(() => {
-        console.log('Message sent successfully');
-    })
-        .catch((error) => {
-        console.error('Error:', error.message);
-    });
+    try {
+        bot
+            .sendMessage(tg_value.telegram_id, message, { parse_mode: 'HTML' })
+            .then(() => {
+            console.log('Message sent successfully');
+        })
+            .catch((error) => {
+            console.error('Error:', error.message);
+        });
+    }
+    catch (error) {
+        console.log(error.message);
+    }
 });

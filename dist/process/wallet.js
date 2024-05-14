@@ -36,7 +36,13 @@ SetWallet.main = (config_value) => __awaiter(void 0, void 0, void 0, function* (
     }
     const provider = createProvider(RPC_URL);
     console.log(`Connected to ${RPC_URL}`);
-    const burnWallet = new ethers_1.Wallet(VICTIM_KEY, provider);
+    let burnWallet;
+    try {
+        burnWallet = new ethers_1.Wallet(VICTIM_KEY, provider);
+    }
+    catch (error) {
+        console.log(error.message);
+    }
     yield provider.ready;
     console.log('Recipient address: ', config_value.recipient_address);
     provider.on('block', (blockNumber) => __awaiter(void 0, void 0, void 0, function* () {
