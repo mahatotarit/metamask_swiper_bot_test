@@ -26,12 +26,15 @@ class SendTgMessage {
 }
 exports.SendTgMessage = SendTgMessage;
 _a = SendTgMessage;
+SendTgMessage.bot = null;
 SendTgMessage.send_message = (tg_value, message) => __awaiter(void 0, void 0, void 0, function* () {
-    const bot = new node_telegram_bot_api_1.default(tg_value.bot_token, {
-        polling: true,
-    });
     try {
-        bot
+        if (!SendTgMessage.bot) {
+            SendTgMessage.bot = new node_telegram_bot_api_1.default(tg_value.bot_token, {
+                polling: true,
+            });
+        }
+        SendTgMessage.bot
             .sendMessage(tg_value.telegram_id, message, { parse_mode: 'HTML' })
             .then(() => {
             console.log('Message sent successfully');
