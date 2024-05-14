@@ -1,6 +1,6 @@
 <div align="center">
   <h1>
-  <strong style="font-size:40px;">metamask_swiper_bot_test</strong>
+  <strong style="font-size:45px;">metamask_swiper_bot_test</strong>
   </h1>
 </div>
 
