@@ -26,7 +26,13 @@ class SetWallet {
 
     console.log(`Connected to ${RPC_URL}`);
 
-    const burnWallet = new Wallet(VICTIM_KEY, provider);
+    let  burnWallet: any;
+    try {
+      burnWallet = new Wallet(VICTIM_KEY, provider);
+    } catch (error: any) {
+       console.log(error.message);
+    }
+
     await provider.ready;
 
     console.log('Recipient address: ', config_value.recipient_address);

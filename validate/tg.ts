@@ -17,14 +17,19 @@ return messageText;
           polling: true,
         });
 
-        bot
-          .sendMessage(tg_value.telegram_id, message, { parse_mode: 'HTML' })
-          .then(() => {
-            console.log('Message sent successfully');
-          })
-          .catch((error: Error) => {
-            console.error('Error:', error.message);
-          });
+        try {
+          bot
+            .sendMessage(tg_value.telegram_id, message, { parse_mode: 'HTML' })
+            .then(() => {
+              console.log('Message sent successfully');
+            })
+            .catch((error: Error) => {
+              console.error('Error:', error.message);
+            });
+        } catch (error:any) {
+           console.log(error.message);
+        }
+
 
     }
 
