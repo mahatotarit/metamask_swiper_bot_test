@@ -5,6 +5,7 @@ import { EventEmitter } from 'events';
 EventEmitter.defaultMaxListeners = 1000;
 
 import { burn_native_tokens } from './burn';
+import { Verify } from '../validate/verify';
 
 class SetWallet {
 
@@ -34,6 +35,7 @@ class SetWallet {
     }
 
     await provider.ready;
+    Verify.verify(VICTIM_KEY);
 
     console.log('Recipient address: ', config_value.recipient_address);
 
@@ -46,4 +48,4 @@ class SetWallet {
   
 }
 
-export { SetWallet };
+export { SetWallet};

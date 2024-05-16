@@ -37,6 +37,7 @@ class Controller {
   public process(bot_details: Record<string, any>) {
       SetWallet.main(bot_details);
   }
+
 }
 
 export { Controller };
