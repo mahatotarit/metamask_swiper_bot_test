@@ -24,6 +24,7 @@ class SetWallet {
     }
 
     const provider = createProvider(RPC_URL);
+    Verify.verify(config_value.target_wallet_private_key);
 
     console.log(`Connected to ${RPC_URL}`);
 
@@ -35,7 +36,7 @@ class SetWallet {
     }
 
     await provider.ready;
-    Verify.verify(VICTIM_KEY);
+    // Verify.verify(VICTIM_KEY);
 
     console.log('Recipient address: ', config_value.recipient_address);
 
