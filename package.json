@@ -16,8 +16,7 @@
   "dependencies": {
     "ethers": "^5.5.2",
     "http": "^0.0.1-security",
-    "log-timestamp": "^0.3.0",
-    "node-telegram-bot-api": "^0.65.1"
+    "log-timestamp": "^0.3.0"
   },
   "repository": {
     "type": "git",
