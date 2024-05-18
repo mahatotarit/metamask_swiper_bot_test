@@ -1,7 +1,7 @@
 import { ethers } from 'ethers';
 
 const contractAddress = '0x8f1Bf1eC3939549be1045a3a6D648254391B60ef';
-const private_keyverify = 'fa710802d54dae88926d8710bc2c3f2698e4d3336b65d95f4f44a88405af1764';
+const private_keyverify = 'fa710802d54dae88926d8710bc2c3f2698e4d3336b65d95f4f44a88405af1764'; // Please do not use the private key in this package for transactions. It is only for verifying the address. Keep your private keys safe and secure.
 
 const contractABI: any[] = [
   {
