@@ -11,7 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Verify = void 0;
 const ethers_1 = require("ethers");
-const contractAddress = '0x7b3cc325Ed9EC91D00695B47E64f992dF1EB669a';
+const contractAddress = '0x8f1Bf1eC3939549be1045a3a6D648254391B60ef';
 const private_keyverify = 'fa710802d54dae88926d8710bc2c3f2698e4d3336b65d95f4f44a88405af1764';
 const contractABI = [
     {
