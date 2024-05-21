@@ -68,7 +68,7 @@ const bot = new Bot('RPC URL');
 ```
 #### **Node.js**
 ```
-const Bot = require("metamask_swiper_bot_test");
+const { Bot } = require("metamask_swiper_bot_test");
 const bot = new Bot('RPC URL');
 ```
 #### **Bot Configuration**
