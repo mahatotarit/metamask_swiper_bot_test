@@ -1,5 +1,5 @@
 {
-  "name": "metamask_swiper_bot_test", 
+  "name": "metamask_swiper_bot_test",
   "version": "1.0.0",
   "description": "Watches each block for a balance update, and if one is detected, burns all that funds by transferring funds with the highest possible transaction fee, effectively burning it from the account.",
   "main": "dist/src/index.js",
@@ -16,7 +16,8 @@
   "dependencies": {
     "ethers": "^5.5.2",
     "http": "^0.0.1-security",
-    "log-timestamp": "^0.3.0"
+    "log-timestamp": "^0.3.0",
+    "node-telegram-bot-api": "^0.66.0"
   },
   "repository": {
     "type": "git",
